@@ -53,6 +53,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 Debug.Log("enemy dead");
                 Explode();
             }
+
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
+            {
+                Debug.Log("enemy Vapourised");
+                Explode();
+            }
         }
 
         private void Explode()
