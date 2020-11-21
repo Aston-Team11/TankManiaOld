@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - reflectSurface
   - Enemy
+  - reflectSurface
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - unwalkable
-  - 
+  - Shield
+  - Player
   - 
   - 
   - 
