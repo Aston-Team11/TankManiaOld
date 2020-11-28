@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Photon.Pun;
+
 
 [RequireComponent(typeof(LineRenderer))]
 
 
-public class PredictTrajectory : MonoBehaviour
+public class PredictTrajectory : MonoBehaviourPunCallbacks
 {
 
     private LineRenderer line;
@@ -16,9 +18,18 @@ public class PredictTrajectory : MonoBehaviour
 
     public int reflections;
     public float maxLength;
-    public GameObject cursor;
- 
-        
+
+    private GameObject cursor;
+   
+
+    public void SetMouseAim(GameObject Mousetarget)
+    {
+        cursor = Mousetarget;
+    }
+
+
+
+
     private void Awake()
     {
         line = GetComponent<LineRenderer>();
@@ -26,6 +37,8 @@ public class PredictTrajectory : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!photonView.IsMine) return;
+
         //shoots ray forward
         ray = new Ray(transform.position, transform.forward);
         rayBounce = 0;
@@ -38,8 +51,9 @@ public class PredictTrajectory : MonoBehaviour
         {
 
             // if a ray hits something
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))
             {
+                
                     rayBounce++;
                     line.positionCount += 1;
                     line.SetPosition(line.positionCount - 1, hit.point);
@@ -47,7 +61,7 @@ public class PredictTrajectory : MonoBehaviour
 
                 // creates new ray from the hitpoint to relfected vector3
                     ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
-              
+                   
                // if no "reflective surfaces hit then cancel
                 if (hit.collider.tag != "reflectSurface")
                 break;

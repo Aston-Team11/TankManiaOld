@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Slo_Motion : MonoBehaviour
+public class Slo_Motion : MonoBehaviourPunCallbacks
+
 {
     public float slowFactor = 0.05f;
-    public float slowLength = 2f;
+    public float slowLength = 10f;
 
     private void Update()
     {
@@ -22,15 +24,30 @@ public class Slo_Motion : MonoBehaviour
     public void Activate(bool state)
     {
         // set time to normal if slomo is turned off 
-        if (state == true) { 
+        if (state == true){
+            photonView.RPC("slowall", RpcTarget.All);
+        }
+        else { 
+           // photonView.RPC("unslowAll", RpcTarget.All);
+        }
+
+      
+    }
+ 
+    [PunRPC]
+    public void slowall()
+    {
         Time.timeScale = slowFactor;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
-        }
-        else
-            Time.timeScale = 1;
        
-
     }
 
+   
 
+
+  //  [PunRPC]
+   // public void unslowAll()
+  //  {
+   //     Time.timeScale = 1;
+   // }
 }

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class bounce : MonoBehaviour
+public class bounce : MonoBehaviourPunCallbacks
 {
-    private string playerID = "";
+   
+    private GameObject playerOwner;
+
     public Rigidbody rb;
     Vector3 lastVelocity;
     private int count;
     private bool firstFire;
     public GameObject explosion;
-    
+    private GameObject shield;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,7 @@ public class bounce : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePositionY;
         Destroy(this.gameObject, 5f);
         firstFire = true;
+        
     }
 
     // Update is called once per frame
@@ -26,27 +30,19 @@ public class bounce : MonoBehaviour
         lastVelocity = rb.velocity;
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
-        //pass through shield on first shot
-        if (collision.gameObject.layer == 8 && firstFire == true)
-        {
-            firstFire = false;
-            //Physics.IgnoreLayerCollision(0, 8);
-            Physics.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider>(), false);
-            return;
-        } 
-
-       
 
         if (collision.gameObject.tag == "Player")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("player: " + playerID + "shot himself");
+            Debug.Log("player: " + playerOwner.ToString() + "shot himself");
             Explode();
         }
 
-        else if(collision.gameObject.tag == "Bullet")
+        else if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("bullet impact");
             Explode();
@@ -54,20 +50,26 @@ public class bounce : MonoBehaviour
 
         else if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("player: " + playerID + " killed an enemy");
+            Debug.Log("player: " + playerOwner.ToString() + " killed an enemy");
             Destroy(this.gameObject, 0f);
         }
 
         else if (collision.gameObject.tag == "Box")
         {
-            Debug.Log("player: " + playerID + "got a powerup");
-            collision.gameObject.SendMessage("activatePowerUp",playerID);
+            collision.gameObject.SendMessage("activatePowerUp", playerOwner);
+            Debug.Log("player: " + playerOwner.ToString() + "got a powerup");
             Destroy(this.gameObject, 0f);
+        }
+
+        else if (collision.gameObject.tag == "Shield")
+        {
+            Debug.Log("player: " + playerOwner.ToString() + " shot a shield");
+            Explode();
         }
 
         else
         {
-            var speed = lastVelocity.magnitude; 
+            var speed = lastVelocity.magnitude;
             var direction = Vector3.Reflect(lastVelocity.normalized, collision.GetContact(0).normal);
             count++;
 
@@ -76,6 +78,9 @@ public class bounce : MonoBehaviour
         }
 
         checkDestroy();
+
+        //enable collision on shield after a collision is registered
+        Physics.IgnoreCollision(shield.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
     }
 
 
@@ -87,19 +92,23 @@ public class bounce : MonoBehaviour
         }
     }
 
-
-    private void Explode()
+    public void Explode()
     {
         var Exploded =  Instantiate(explosion, transform.position, transform.rotation);
         Destroy(Exploded, 2f);
-        Destroy(this.gameObject);
-      
+        Destroy(this.gameObject,0f);
     }
 
 
-    public void SetPlayerID(string id)
+    public void SetPlayerID(GameObject player)
     {
-        playerID = id;
+        playerOwner = player;
+    }
+
+
+    public void setShield(GameObject newShield)
+    {
+        shield = newShield;
     }
 
 }
