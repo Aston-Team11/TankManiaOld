@@ -1,25 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class mouseTargetSwivel : MonoBehaviour
+public class mouseTargetSwivel : MonoBehaviourPunCallbacks
 {
-    Vector3 target;
-    public GameObject crosshair;
+    private Vector3 target;
+    private GameObject crosshair;
     public GameObject swivelTop;
 
     private RaycastHit hit;
+  //  public GameObject parent;
+
+    public void SetMouseAim(GameObject Mousetarget)
+    {
+        crosshair = Mousetarget;
+    }
+
+
 
     void Start()
     {
          //Cursor.visible = false;
-        crosshair.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+        //crosshair.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!photonView.IsMine) return;
+
         // shoots ray from camera to mouse position;
         target = Input.mousePosition;
         var ray = Camera.main.ScreenPointToRay(target);
