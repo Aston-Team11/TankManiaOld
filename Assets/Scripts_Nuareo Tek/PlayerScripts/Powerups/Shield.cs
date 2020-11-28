@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Shield : MonoBehaviour
+public class Shield : MonoBehaviourPunCallbacks
 {
     public GameObject player;
     Renderer rend;
@@ -14,7 +15,7 @@ public class Shield : MonoBehaviour
 
     private void Start()
     {
-      
+        
     }
 
 
@@ -39,6 +40,7 @@ public class Shield : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("bullet hit shield");
+          
         }
 
         else if (collision.gameObject.tag == "Enemy")
@@ -48,14 +50,14 @@ public class Shield : MonoBehaviour
         }
     }
 
-    IEnumerator Dissolve()
+        IEnumerator Dissolve()
     {
         yield return new WaitForSeconds(5f);
         FXAnimation();
     }
 
 
-    private void FXAnimation()
+    public void FXAnimation()
     {
         //changes fernal and offset, to look like shield is charging up and becoming more solid 
         if (bright > -2.00f && change == false)
@@ -71,7 +73,10 @@ public class Shield : MonoBehaviour
             change = true;
            // StopAllCoroutines();
             rend.material = mats[1];
-            slowlyDestroy();          
+           // tell everyone to destroy this players shield
+           photonView.RPC("slowlyDestroy", RpcTarget.OthersBuffered);
+            slowlyDestroy();
+          
         }
     }
 
@@ -95,12 +100,14 @@ public class Shield : MonoBehaviour
         disabled= false;
         disabled2 = false;
 
+       
     }
 
+    [PunRPC]
     private void slowlyDestroy()
     {
-     
-        // change brightness
+       
+        // changing brightness
         var fernal = mats[1].GetFloat("Vector1_7AFF87E4");
         if (fernal < 2.37f && disabled == false)
         {
@@ -113,7 +120,7 @@ public class Shield : MonoBehaviour
             disabled = true;
         }
 
-        //change dissolve
+        //changing dissolve values so the shield dissovles away before being disabled
         var dissolve = mats[1].GetFloat("Vector1_2E8A09FF");
         if (dissolve > -0.9f && disabled2 == false)
         {
@@ -126,10 +133,24 @@ public class Shield : MonoBehaviour
             disabled2 = true;
             Debug.Log("Destroy SHIELD");
             gameObject.SetActive(false);
+
         }
      
     }
 
+    //tell everyone the shiled is gone
+    [PunRPC]
+    public void sendtoServer()
+    {
+            gameObject.SetActive(false);
+        photonView.RPC("sendtoServer", RpcTarget.OthersBuffered);
+    }
+
+
+    public int getID()
+    {
+        return player.GetComponent<PhotonView>().ViewID;
+    }
 
 }
 
