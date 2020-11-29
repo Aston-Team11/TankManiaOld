@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 public class mouseTargetSwivel : MonoBehaviourPunCallbacks
 {
@@ -41,19 +42,28 @@ public class mouseTargetSwivel : MonoBehaviourPunCallbacks
         {
             target = hit.point;
         }
-      
-     
 
-        // visualise mouse cursor with target position
-        crosshair.GetComponent<Rigidbody>().MovePosition(target);
 
-        // sviwel the tank's top to the mouse target position
-        Vector3 difference = target - swivelTop.transform.position;
-        float angleY = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
+        try
+        {
+            // visualise mouse cursor with target position
+            crosshair.GetComponent<Rigidbody>().MovePosition(target);
 
-        // rotate slowly towards mouse Y postition
-        Quaternion rotTarget = Quaternion.Euler(0.0f, angleY, 0.0f);
-        swivelTop.transform.rotation = Quaternion.RotateTowards(swivelTop.transform.rotation, rotTarget, 20f);
+            // sviwel the tank's top to the mouse target position
+            Vector3 difference = target - swivelTop.transform.position;
+            float angleY = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
+
+            // rotate slowly towards mouse Y postition
+            Quaternion rotTarget = Quaternion.Euler(0.0f, angleY, 0.0f);
+            swivelTop.transform.rotation = Quaternion.RotateTowards(swivelTop.transform.rotation, rotTarget, 20f);
+        }
+
+        catch (NullReferenceException)
+        {
+            return;
+        }
+
+
     }
 }
 

@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Icon_SelectionRing_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1751673327831936, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4185321474572978, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.46
@@ -83,11 +87,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 23226691750534540, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
+    - target: {fileID: 23226691750534540, guid: 7384e233828f7bf4b88aeb1a36a9b104,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 98bc34ddef060be4ea47e99161e9df8f, type: 2}
-    - target: {fileID: 33584981508813370, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
+    - target: {fileID: 33584981508813370, guid: 7384e233828f7bf4b88aeb1a36a9b104,
+        type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: adfd2da16a922724b8ddaf9c979ed19c, type: 3}
@@ -95,6 +101,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
 --- !u!1 &5427366937343906417 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1751673327831936, guid: 7384e233828f7bf4b88aeb1a36a9b104, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1751673327831936, guid: 7384e233828f7bf4b88aeb1a36a9b104,
+    type: 3}
   m_PrefabInstance: {fileID: 5429045758561262065}
   m_PrefabAsset: {fileID: 0}

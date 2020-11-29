@@ -48,19 +48,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (targetsList.Count >= 1)
 
-                // for(int i = 0; i < targetsList.Count; i++)
-                // {
-                //    float newDist = Vector3.Distance(targetsList[i].transform.position, this.transform.position);
-                //    
-                //         for(int d = 0; d < dist.Count; d++)
-                //         {
-                //             if (newDist < dist[d])
-                //             {
-                //             dist.Add(newDist);
-                //             }
-                //         }
-                // }
-              
                 target = targetsList[0];
                 agent.SetDestination(target.position);
 

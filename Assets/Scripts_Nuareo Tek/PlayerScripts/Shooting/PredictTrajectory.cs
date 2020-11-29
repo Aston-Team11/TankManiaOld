@@ -69,12 +69,20 @@ public class PredictTrajectory : MonoBehaviourPunCallbacks
 
             else
             {
-                float distance = (rayBounce >= 1) ? remainingLength : Vector3.Distance(transform.position, cursor.transform.position);
+                try
+                {
+                    float distance = (rayBounce >= 1) ? remainingLength : Vector3.Distance(transform.position, cursor.transform.position);
                
 
                 // if no surface at all hit, then carry on line 
                 line.positionCount += 1;
                 line.SetPosition(line.positionCount - 1, ray.origin + ray.direction * distance);
+                }
+
+                catch (NullReferenceException)
+                {
+                    return;
+                }
             }
         }
     }

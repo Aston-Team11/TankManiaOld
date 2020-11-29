@@ -42,7 +42,7 @@ namespace com.Riyad.TankMania
 
         public void Connect() 
         {
-            PhotonNetwork.GameVersion = "0.0.0";
+            PhotonNetwork.GameVersion = "1.0.0";
             PhotonNetwork.ConnectUsingSettings();
 
         }
@@ -50,6 +50,7 @@ namespace com.Riyad.TankMania
         public void Join()
         {
             PhotonNetwork.JoinRandomRoom();
+           
         }
 
         public void StartGame()

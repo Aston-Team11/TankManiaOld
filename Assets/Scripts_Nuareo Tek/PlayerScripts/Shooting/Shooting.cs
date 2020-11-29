@@ -56,7 +56,6 @@ public class Shooting : MonoBehaviourPunCallbacks
         if (Shield.activeSelf)
         {
             Physics.IgnoreCollision(bullet.GetComponent<Collider>(), Shield.GetComponent<Collider>(), true);
-            //bullet.GetComponent<bounce>().outofShield();
         }
 
 

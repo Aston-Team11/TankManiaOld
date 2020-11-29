@@ -149,6 +149,7 @@
     <None Include="Assets\Free Assests\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\Free Assests\Kenney\Particle samples\License.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Free Assests\Poly City - Free Cartoon Pack\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />

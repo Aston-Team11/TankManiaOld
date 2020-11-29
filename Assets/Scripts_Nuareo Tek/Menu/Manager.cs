@@ -4,11 +4,9 @@ using UnityEngine;
 using Photon.Pun;
 
 
-
 namespace com.Riyad.TankMania
 {
   
-
     public class Manager : MonoBehaviour
     {
         public string player_prefab;
@@ -24,7 +22,6 @@ namespace com.Riyad.TankMania
         void Start()
         {
             SpawnPlayer();
-           
         }
 
         //spawn player, set camera and mouse aim
@@ -32,14 +29,14 @@ namespace com.Riyad.TankMania
         {
             playerCount++;
             var player = PhotonNetwork.Instantiate(player_prefab, SpawnPoint.position, SpawnPoint.rotation);
-            var mouse = PhotonNetwork.Instantiate(mouseReticle, SpawnPoint.position, SpawnPoint.rotation);
-            mouse.SetActive(true);
+           // var mouse = PhotonNetwork.Instantiate(mouseReticle, SpawnPoint.position, SpawnPoint.rotation);
+            //mouse.SetActive(false);
             player.SendMessage("setPlayerID", playerCount);
-            player.SendMessage("setMouse", mouse);
+           // player.SendMessage("setMouse", mouse);
             player.SendMessage("setTimeObject", time);
             
-          //  var zombie = PhotonNetwork.Instantiate(Enemy, SpawnPointEnemy.position, SpawnPointEnemy.rotation);
-           // zombie.SendMessage("getPlayers", player);
+           // var zombie = PhotonNetwork.Instantiate(Enemy, SpawnPointEnemy.position, SpawnPointEnemy.rotation);
+            //zombie.SendMessage("getPlayers", player);
         }
     }
 

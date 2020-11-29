@@ -4,9 +4,11 @@ using UnityEngine;
 using Photon.Pun;
 using System;
 
+[RequireComponent(typeof(Rigidbody))]
+
 public class PlayerMovement : MonoBehaviourPunCallbacks
 {
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     public float acceleration, torqueForce;
     private float defaultRotate, defaultSpeed;
@@ -17,9 +19,11 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
     public GameObject parentCam;
 
+ 
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
 
         if (photonView.IsMine)
         {
@@ -66,12 +70,13 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         // check if player view is this player
         if (!photonView.IsMine) return;
 
+        // apply forward/backward force and roational forces dependent on user input 
         rb.AddForce(transform.forward * direction.x * acceleration);
         rb.AddTorque(transform.up * torqueForce * direction.y);
 
         //check if time has been changed, adjust acceleration if time is slowed
-        acceleration = (Time.timeScale != 1) ? defaultSpeed * 5 : defaultSpeed;
-        torqueForce = (Time.timeScale != 1) ? defaultRotate * 2 : defaultRotate;
+        acceleration = (Time.timeScale != 1) ? defaultSpeed * 2f : defaultSpeed;
+        torqueForce = (Time.timeScale != 1) ? defaultRotate * 1.5f : defaultRotate;
 
     }
 

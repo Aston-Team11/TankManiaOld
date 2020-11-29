@@ -57,7 +57,7 @@ public class PowerUp : MonoBehaviourPunCallbacks
            break;
    }
 
-        player.SendMessage("PowerupAttained", "SHIELD");
+      
     }
 
 }

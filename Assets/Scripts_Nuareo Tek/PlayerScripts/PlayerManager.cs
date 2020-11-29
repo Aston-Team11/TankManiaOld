@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     public Shield shieldClass;
 
  
-    private GameObject mouseTarget;
+    public GameObject mouseTarget;
 
     //public bounce bounceClass;
     public mouseTargetSwivel mouseClass;
@@ -24,7 +24,13 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     private string powerUpType = "";
     private string playerID = "";
 
-  
+
+    public void Start()
+    {
+        setMouse();
+    }
+
+
 
     public void setPlayerID(int num)
     {
@@ -33,12 +39,13 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         Debug.Log("player ID set to " + playerID);
     }
 
-    public void setMouse(GameObject mouse)
+    public void setMouse()
     {
         if (!photonView.IsMine) return;
         //pass mouseTarget GameObject to appropriate classes
+        var mouse = Instantiate(mouseTarget, transform.position, transform.rotation);
         mouseTarget = mouse;
-     
+        mouseTarget.SetActive(true);
         mouseClass.SendMessage("SetMouseAim", mouseTarget);
         trajectoryClass.SendMessage("SetMouseAim", mouseTarget);
     }
@@ -116,6 +123,11 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     public void getname(string message)
     {
         Debug.Log(message);
+    }
+
+    public void DamagePlayer(int dmg)
+    {
+        health -= dmg;
     }
 
 }

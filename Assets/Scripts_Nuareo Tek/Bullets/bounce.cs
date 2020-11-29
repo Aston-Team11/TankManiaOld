@@ -39,6 +39,7 @@ public class bounce : MonoBehaviourPunCallbacks
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("player: " + playerOwner.ToString() + "shot himself");
+            collision.gameObject.SendMessage("DamagePlayer", 10);
             Explode();
         }
 
@@ -62,6 +63,12 @@ public class bounce : MonoBehaviourPunCallbacks
         }
 
         else if (collision.gameObject.tag == "Shield")
+        {
+            Debug.Log("player: " + playerOwner.ToString() + " shot a shield");
+            Explode();
+        }
+
+        else if (collision.gameObject.tag == "Non_Collidable")
         {
             Debug.Log("player: " + playerOwner.ToString() + " shot a shield");
             Explode();
