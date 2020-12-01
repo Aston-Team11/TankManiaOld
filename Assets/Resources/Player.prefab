@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 5898455497268211088}
   m_LocalRotation: {x: 0, y: -0.6960381, z: 0, w: 0.7180049}
   m_LocalPosition: {x: 16.260927, y: 6.3283916e-18, z: -3.14874}
-  m_LocalScale: {x: 0.9669601, y: 0.28799552, z: 0.76780224}
+  m_LocalScale: {x: 0.9, y: 0.3, z: 0.7}
   m_Children:
   - {fileID: 3603494495614059172}
   - {fileID: 2908049865769144337}
@@ -298,7 +298,6 @@ MonoBehaviour:
   torqueForce: 3.5
   steering: 10
   direction: {x: 0, y: 0}
-  health: 50
   parentCam: {fileID: 2308331000217148019, guid: f676883ed7f6e2041a1566858f2f4739,
     type: 3}
 --- !u!114 &8118915089222574664
