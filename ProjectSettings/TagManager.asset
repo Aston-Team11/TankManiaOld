@@ -9,6 +9,7 @@ TagManager:
   - Box
   - Bullet
   - Shield
+  - Non_Collidable
   layers:
   - Default
   - TransparentFX

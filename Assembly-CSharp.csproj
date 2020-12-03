@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F81BBD9A-EDE0-0EC0-06CF-850C5334AA13}</ProjectGuid>
+    <ProjectGuid>{8A8BF715-0AD3-0E6D-A114-D0B05D4B799B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -109,20 +109,20 @@
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\Bullets\bounce.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\Camera\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\EnemyAI\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\Menu\Launcher.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\Menu\Manager.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Powerups\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Powerups\Shield.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Powerups\Slo_Motion.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Shooting\PredictTrajectory.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Shooting\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\PlayerScripts\Shooting\mouseTargetSwivel.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\Bullets\bounce.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\Camera\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\EnemyAI\EnemyMovement.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\Menu\Launcher.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\Menu\Manager.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Powerups\PowerUp.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Powerups\Shield.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Powerups\Slo_Motion.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Shooting\PredictTrajectory.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Shooting\Shooting.cs" />
-    <Compile Include="Assets\Scripts_Nuareo Tek\PlayerScripts\Shooting\mouseTargetSwivel.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
     <None Include="Assets\Free Assests\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
@@ -149,6 +149,7 @@
     <None Include="Assets\Free Assests\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\Free Assests\Kenney\Particle samples\License.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Free Assests\Poly City - Free Cartoon Pack\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
@@ -341,10 +342,10 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -701,103 +702,103 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Riyad/Documents/GitHub/Multiplayer Tanks/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Riyad/Documents/GitHub/TankMania/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{7A2EABEA-5234-FE51-BEA1-E9B840E107DE}</Project>
+      <Project>{3BFAF178-4FD5-D384-3FD5-EC9CC7106241}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{0F4079AA-29A9-2F51-B9C6-018B31DF5051}</Project>
+      <Project>{E1A9E9EC-17EE-A630-F44B-3443D3EB3202}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{A028F8FE-B086-ECD7-92A8-C447C61674AC}</Project>
+      <Project>{EC16229A-F233-B0E6-0DEC-8998E1180313}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{4A851899-5DE2-6AA2-AE52-284DEAFF3D75}</Project>
+      <Project>{16325AAF-B715-563D-0371-2539E59CF092}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{A63D9B02-A2B0-5F7C-00FC-189AACAB2115}</Project>
+      <Project>{06CDE7D1-8770-8564-E0F7-81A2FF5BBDD0}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="ParrelSync.csproj">
-      <Project>{B7323B83-FB0D-4B6A-F9FE-695A0B2B7A35}</Project>
+      <Project>{6B2E6FA3-54F2-C456-1DA2-581D5F6F5542}</Project>
       <Name>ParrelSync</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{6B5C3B5F-4C2D-772B-2CF7-51F5FB51E72B}</Project>
+      <Project>{5B5AE741-7428-F77B-4FBA-F9B48F76B77B}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{18D5077C-129A-F776-9DFF-993A7C2099C1}</Project>
+      <Project>{C2712BC8-17D2-F292-DC15-7CCCB458C589}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{87B3DCA2-8775-7157-AE40-F32852DD3248}</Project>
+      <Project>{D55052A1-1598-D6A3-B43D-48AA515BF18C}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{17B36C5B-F782-B0FA-F024-8F8C446C8445}</Project>
+      <Project>{DA6573F4-B781-0BC0-EBAC-88213EDE8EB5}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{A1390598-D197-A20E-1E3F-5FA680D807A6}</Project>
+      <Project>{F5E17809-5343-30E4-63AC-B79BA9F7066B}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
   </ItemGroup>
