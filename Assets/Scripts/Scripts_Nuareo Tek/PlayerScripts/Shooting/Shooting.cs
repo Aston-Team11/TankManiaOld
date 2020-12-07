@@ -11,6 +11,7 @@ public class Shooting : MonoBehaviourPunCallbacks
     public int bulletSpeed;
     // the player who shot the bullet is the parent
     public GameObject parent;
+    public ParticleSystem muzzleFlash;
 
     public bool shootAble = true;
     public float waitBeforeNextShot = 0.25f;
@@ -29,6 +30,7 @@ public class Shooting : MonoBehaviourPunCallbacks
                 photonView.RPC("Shoot", RpcTarget.All);
                 //Shoot();
                 StartCoroutine(ShootingYield());
+                muzzleFlash.Play();
             }
         }
 
@@ -44,6 +46,7 @@ public class Shooting : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Shoot()
     {
+        
             Quaternion rot = top.transform.rotation;
             float angle = 90 * Mathf.Deg2Rad;
 
