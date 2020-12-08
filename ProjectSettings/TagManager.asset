@@ -11,6 +11,7 @@ TagManager:
   - Shield
   - Non_Collidable
   - EnemySpawn
+  - PowerUpExplosion
   layers:
   - Default
   - TransparentFX
