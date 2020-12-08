@@ -9,6 +9,8 @@ TagManager:
   - Box
   - Bullet
   - Shield
+  - Non_Collidable
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

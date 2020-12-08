@@ -136,7 +136,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.2
+  m_StoppingDistance: 0.02
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -156,8 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5335f0882fe4d478883cc8c58ce906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetsList: []
-  target: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
 --- !u!114 &306437902164725569
 MonoBehaviour:
