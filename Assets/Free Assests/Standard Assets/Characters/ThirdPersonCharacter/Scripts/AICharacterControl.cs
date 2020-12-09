@@ -19,7 +19,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         
         public GameObject spawner;
-       
+        public AudioSource zombie_bloodSound;
+
 
 
         /// <summary>
@@ -35,7 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         //!!!! Create a distance function which will test the distance of each player. 
         //++++ Which ever player has the lowest distance is set to the target
-       
+
 
 
         private void Start()
@@ -49,8 +50,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             spawner = GameObject.FindGameObjectWithTag("EnemySpawn");
             //spawn = GetComponent<Spawner>();
-    
-           
+            zombie_bloodSound = GetComponent<AudioSource>();
+            zombie_bloodSound.Play();
+
+
         }
 
 
@@ -88,10 +91,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 //!!!! add attacking animation here
                 collision.gameObject.GetComponentInParent<PlayerManager>().DamagePlayer(1);
                 Debug.Log("attack");
+                
             }
 
             else if (collision.gameObject.tag == "Bullet")
             {
+                
                 Debug.Log("enemy dead");
                 Explode();
             }
