@@ -12,6 +12,7 @@ TagManager:
   - Non_Collidable
   - EnemySpawn
   - PowerUpExplosion
+  - EnemySystem
   layers:
   - Default
   - TransparentFX

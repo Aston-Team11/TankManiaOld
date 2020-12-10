@@ -11,12 +11,11 @@ using Photon.Pun;
     public class PowerUp : MonoBehaviourPunCallbacks
     {
         public GameObject explosion;            // the paricle effect for explosion
-   //public AudioSource explosionSound;    // explosion sound
-    public GameObject soundEffect;
+    public GameObject explosion_soundEffect;  // the explosion sound effect for the power up boxes
 
     public void Start(){
    // explosionSound = GetComponent<AudioSource>();
-   soundEffect = GameObject.FindGameObjectWithTag("PowerUpExplosion");
+   explosion_soundEffect = GameObject.FindGameObjectWithTag("PowerUpExplosion"); //the tag is connected to the Explosives object sound in the map object.
     }
         /// <summary>
         /// @author Riyad K Rahman
@@ -43,7 +42,7 @@ using Photon.Pun;
             var Exploded = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(Exploded, 2f);
        // explosionSound.Play();
-        soundEffect.GetComponent<AudioSource>().Play();
+        explosion_soundEffect.GetComponent<AudioSource>().Play();        //play the explosion sound effect.
         photonView.RPC("sendDestroy", RpcTarget.AllBufferedViaServer);
         //playSound();
     }
