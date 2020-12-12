@@ -10,6 +10,10 @@ TagManager:
   - Bullet
   - Shield
   - Non_Collidable
+  - EnemySpawn
+  - FxTemporaire
+  - PlayerAddOns
+  - Aoe
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Players
   - 
   - 
   - 

@@ -87,7 +87,7 @@ public class bounce : MonoBehaviourPunCallbacks
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerAddOns")
         {
           //++++Damages the player by 10 hitpoints nad triggers explosion effect
             Debug.Log("player: " + playerOwner.ToString() + "shot himself");
@@ -159,7 +159,7 @@ public class bounce : MonoBehaviourPunCallbacks
     /// </summary>
     private void checkDestroy()
     {
-        if(count > 7)
+        if(count > 3)
         {
            // PhotonNetwork.Destroy(this.photonView);
             Destroy(this.gameObject, 0f);

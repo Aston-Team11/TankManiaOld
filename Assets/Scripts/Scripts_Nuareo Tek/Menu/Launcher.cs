@@ -48,9 +48,9 @@ namespace com.Riyad.TankMania
 
         public void Join()
         {
-            PhotonNetwork.JoinRandomRoom();
-           
-           
+            PhotonNetwork.JoinRandomRoom();                 // uncomment for parallelSync
+            //CreateMatch();                              // Only for single player testing use otherwise uncomment
+
         }
 
         public void StartGame()
@@ -64,7 +64,8 @@ namespace com.Riyad.TankMania
 
         public void CreateMatch()
         {
-            PhotonNetwork.CreateRoom("");
+            //PhotonNetwork.CreateRoom("riyad");   // Only for single player testing use otherwise uncomment
+            PhotonNetwork.CreateRoom("");   // remove "riayd" for parallelSync
         }
 
 

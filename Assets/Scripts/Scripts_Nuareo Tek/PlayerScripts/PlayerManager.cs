@@ -2,41 +2,71 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 public class PlayerManager : MonoBehaviourPunCallbacks
 {
-    public int health = 100;
+    [SerializeField] private int order;
+
+    public float health;
     public GameObject explosion;
     private Slo_Motion slow;
     public GameObject shield;
     public Shield shieldClass;
 
- 
+
     public GameObject mouseTarget;
 
-    //public bounce bounceClass;
     public mouseTargetSwivel mouseClass;
     public PredictTrajectory trajectoryClass;
 
 
     private bool slo;
     private string powerUpType = "";
-    private string playerID = "";
+   // private string playerID = "";
+    [SerializeField] private GameObject MySpawners;
+    [SerializeField] private GameObject MySystem;
+
+    [SerializeField] private bool poision;
+    [SerializeField] private int isPoision;
+   
 
 
     public void Start()
     {
+        SetName();
+        SetOrder(Convert.ToInt32(this.gameObject.name));
         setMouse();
+        MySystem = GameObject.Find("----SYSTEMS----");
+        MySpawners = GameObject.Find("Spawners");
+        photonView.RPC("AddPlayerToList", RpcTarget.AllBuffered);
+        
     }
 
+    [PunRPC]
+    public void AddPlayerToList()
+    { 
+        MySpawners.GetComponent<Spawner>().addPlayer(this.gameObject);
+    }
 
-
-    public void setPlayerID(int num)
+  
+    public void SetName()
     {
-        if (!photonView.IsMine) return;
-        playerID = num.ToString();
-        Debug.Log("player ID set to " + playerID);
+        photonView.RPC("UpdateName", RpcTarget.AllBuffered, this.gameObject.name);
     }
+
+    [PunRPC]
+    public void UpdateName(string name)
+    {
+        this.gameObject.name = name;
+    }
+
+    // public void setPlayerID(int num)
+    // {
+    //     if (!photonView.IsMine) return;
+    //     playerID = num.ToString();
+    //     Debug.Log("player ID set to " + playerID);
+    // }
 
     public void setMouse()
     {
@@ -72,7 +102,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             {
                 photonView.RPC("spawnShield", RpcTarget.AllBufferedViaServer);
             }
-            
+
         }
 
         updateHealth();
@@ -87,28 +117,45 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     }
 
 
-    //damage player on collision
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health -= 5;
-        }
-    }
+   //damage player on collision
+ //private void OnCollisionEnter(Collision collision)
+ // {
+ //     if (collision.gameObject.tag == "aoe")
+ //     {
+ //          Debug.LogError("it works");
+ //      }
+ // }
 
 
     // kill player on 0 health
     private void updateHealth()
     {
-        if (health <= 0 )
+        PosionDamage();
+
+        if (health <= 0)
         {
             var Exploded = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(Exploded, 2f);
-            PhotonNetwork.Destroy(this.photonView);
-           Destroy(this.gameObject, 0f);
-            
+
+            MySystem.SendMessage("Respawn", this.gameObject);
+            photonView.RPC("Respawn", RpcTarget.AllBufferedViaServer);
+
         }
+       
     }
+
+    [PunRPC]
+    public void Respawn()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void StatReset()
+    {
+        health = 100;
+    }
+
+
 
     public void PowerupAttained(string powerType)
     {
@@ -121,10 +168,67 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     }
 
 
-    public void DamagePlayer(int dmg)
+    public void DamagePlayer(float dmg)
     {
         health -= dmg;
     }
+
+    public void PosionDamage()
+    {
+        if(poision == true)
+        {
+            DamagePlayer(0.05f);
+        }
+    }
+
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public void SetOrder(int num)
+    {
+        order = num;
+    }
+
+    public int GetOrder()
+    {
+        return order;
+    }
+
+
+    public void Setpoisoned(bool state)
+    {
+        poision = state;
+
+        if (poision == true)
+        {
+            isPoision++;
+            StartCoroutine(endPoison());
+        }
+        else
+        {
+            StopCoroutine(endPoison());
+        }
+
+    }
+
+    public bool GetPoisoned()
+    {
+        return poision;
+    }
+
+    IEnumerator endPoison()
+    {
+        yield return new WaitForSeconds(9f);
+        if (isPoision > 1)
+        {
+            poision = false;
+            isPoision = 0;
+        }
+    }
+
 
 }
 
