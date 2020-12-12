@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 90928a23998bd1d4d895b3486456d122
+    path: Assets/AAA-UI-AAA/LogoAnimation/LogoAnimation.unity
+    guid: f7a8f7026c40847fba375b9294eafa71
+  - enabled: 1
+    path: Assets/AAA-UI-AAA/MainMenuUI/Tankmania Main Menu/Scenes/MainMenu/MainMenu.unity
+    guid: e84c9862265a1104a9d724503d4111aa
   - enabled: 1
     path: Assets/Scenes/Tank Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
