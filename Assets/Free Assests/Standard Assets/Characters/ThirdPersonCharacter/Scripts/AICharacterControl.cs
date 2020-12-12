@@ -19,6 +19,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         //only exists for zombie
         private GameObject spawner;
+        public GameObject enenmySystemSound;  // the blood splatter fx for the zombie
 
         //this is the effect of the zombie exploding
         public GameObject bombSpray;
@@ -38,7 +39,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         //!!!! Create a distance function which will test the distance of each player. 
         //++++ Which ever player has the lowest distance is set to the target
-       
+
 
 
         private void Start()
@@ -52,8 +53,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             spawner = GameObject.FindGameObjectWithTag("EnemySpawn");
             //spawn = GetComponent<Spawner>();
-    
-           
+            enenmySystemSound = GameObject.FindGameObjectWithTag("EnemySystem"); // the tag is connected to the BloodSound object found in player object.
+
         }
 
 
@@ -92,10 +93,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 collision.gameObject.GetComponentInParent<PlayerManager>().DamagePlayer(10);
                 Explode();
                 Debug.Log("attack");
+                
             }
 
             else if (collision.gameObject.tag == "Bullet")
             {
+                
                 Debug.Log("enemy dead");
                 Death();
             }
@@ -118,8 +121,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             var blood = Instantiate(bloodSpray, transform.position, bloodSpray.transform.rotation);
             Destroy(blood, 2f);
+            enenmySystemSound.GetComponent<AudioSource>().Play(); // play the blood splatter fx
             // PhotonNetwork.Destroy(this.photonView);
-            
             Destroy(this.gameObject, 0f);
             // spawn.enemiesKilled++;
             spawner.SendMessage("IncrementEnemies");

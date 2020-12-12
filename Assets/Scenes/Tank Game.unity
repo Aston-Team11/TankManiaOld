@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &15540154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,6 +1681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &79094493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2288,6 +2290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &87493129
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3846,6 +3849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &228124918
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5275,6 +5279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &296403321
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6081,6 +6086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &319463974
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7392,6 +7398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &403133684
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7937,6 +7944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &436470193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8834,6 +8842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &454010243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9035,6 +9044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &456210223
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9210,6 +9220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &460589810
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9749,6 +9760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &527265658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9962,6 +9974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &532966182
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10995,9 +11008,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618167839}
+  - component: {fileID: 618167840}
   m_Layer: 0
   m_Name: Explosives
-  m_TagString: Untagged
+  m_TagString: PowerUpExplosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11077,6 +11091,102 @@ Transform:
   m_Father: {fileID: 241852922}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &618167840
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618167838}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1fd31868d68903d4f9e2c4a3b7ef98f3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &621759700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436670, guid: 54eb5844754051b40a918a84c33b7c1a,
@@ -12889,6 +12999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &735230284
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -13595,6 +13706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &797630118
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -14400,6 +14512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &828368524
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -14959,6 +15072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &852314258
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -15228,6 +15342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &862064261
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -16510,6 +16625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &942805428
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -16887,6 +17003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &964873878
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -18764,6 +18881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1062325487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19941,6 +20059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1113798161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20444,6 +20563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1158566008
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21157,6 +21277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1210995150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21370,6 +21491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1217496193
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21507,6 +21629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1219921516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21720,6 +21843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1226604567
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21971,6 +22095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1233695040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22271,6 +22396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1246039958
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -22716,6 +22842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1271157359
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23422,6 +23549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1305211161
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -24059,6 +24187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1366740492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24771,6 +24900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1386517763
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -26173,6 +26303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1461164313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26535,6 +26666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1475473753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28191,6 +28323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1543938956
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -28905,6 +29038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1570806426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29736,6 +29870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1611599453
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -30248,6 +30383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1646438444
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -30489,6 +30625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1651126073
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -30910,6 +31047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1663020703
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -31031,6 +31169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!1001 &1688787212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31052,11 +31191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625151964636756, guid: d19c36dc5f97d444fa54380cf09bd828, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.2
+      value: -35.9
       objectReference: {fileID: 0}
     - target: {fileID: 4625151964636756, guid: d19c36dc5f97d444fa54380cf09bd828, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.3
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4625151964636756, guid: d19c36dc5f97d444fa54380cf09bd828, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31139,6 +31278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1688787216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31314,6 +31454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1690310010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31758,6 +31899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1709540992
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -32484,6 +32626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1725156055
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -33330,6 +33473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &1779900999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33543,6 +33687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1784058901
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -33718,6 +33863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &1791043164
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -36077,6 +36223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &2034831403
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -37031,6 +37178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &2091794732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37387,6 +37535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!114 &2104591596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37701,6 +37850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  soundEffect: {fileID: 0}
 --- !u!208 &2121602956
 NavMeshObstacle:
   m_ObjectHideFlags: 0
