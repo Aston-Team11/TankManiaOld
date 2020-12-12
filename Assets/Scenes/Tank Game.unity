@@ -1480,6 +1480,8 @@ MonoBehaviour:
   Agent: {fileID: 74764122}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &74764124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1949,6 +1951,8 @@ MonoBehaviour:
   Agent: {fileID: 81394034}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &81394036
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3620,6 +3624,8 @@ MonoBehaviour:
   Agent: {fileID: 224788241}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &224788243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5564,6 +5570,8 @@ MonoBehaviour:
   Agent: {fileID: 305595122}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &305595124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11740,6 +11748,8 @@ MonoBehaviour:
   Agent: {fileID: 665425138}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &665425140
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12188,6 +12198,8 @@ MonoBehaviour:
   Agent: {fileID: 705385002}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &705385004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16165,6 +16177,8 @@ MonoBehaviour:
   Agent: {fileID: 918107613}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &918107615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18403,6 +18417,8 @@ MonoBehaviour:
   Agent: {fileID: 1021612802}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &1021612804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20190,6 +20206,8 @@ MonoBehaviour:
   Agent: {fileID: 1130185822}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &1130185824
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34837,6 +34855,8 @@ MonoBehaviour:
   Agent: {fileID: 1899988158}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &1899988160
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35523,6 +35543,8 @@ MonoBehaviour:
   Agent: {fileID: 1966180050}
   Player: {fileID: 0}
   bloodSpray: {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  bombSpray: {fileID: 0}
+  radiation: {fileID: 0}
 --- !u!54 &1966180052
 Rigidbody:
   m_ObjectHideFlags: 0

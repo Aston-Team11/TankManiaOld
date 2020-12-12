@@ -17,11 +17,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling                  
 
-        
-        public GameObject spawner;
+        //only exists for zombie
+        private GameObject spawner;
         public GameObject enenmySystemSound;  // the blood splatter fx for the zombie
 
-
+        //this is the effect of the zombie exploding
+        public GameObject bombSpray;
+        //this is the effect of the explosion remnants
+        public GameObject radiation;
 
         /// <summary>
         /// @author Riyad K Rahman
@@ -70,7 +73,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
           
             else
                 //stop moving (vertor3.zero) and crouch
-                character.Move(Vector3.zero, true, false);
+                character.Move(Vector3.zero, false, false);
                 //!!!! add attacking animation here
                 Debug.Log("attack");
         }
@@ -87,7 +90,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (collision.gameObject.tag == "Player")
             {
                 //!!!! add attacking animation here
-                collision.gameObject.GetComponentInParent<PlayerManager>().DamagePlayer(1);
+                collision.gameObject.GetComponentInParent<PlayerManager>().DamagePlayer(10);
+                Explode();
                 Debug.Log("attack");
                 
             }
@@ -96,13 +100,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 
                 Debug.Log("enemy dead");
-                Explode();
+                Death();
             }
 
-            else if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
+            else if (collision.gameObject.tag == "Shield")
             {
                 Debug.Log("enemy Vapourised");
-                Explode();
+                Death();
             }
         }
 
@@ -111,7 +115,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         /// @author Riyad K Rahman
         /// triggers particle effect and destroys this object/bloodspray object both locally and on the server
         /// </summary>
-        private void Explode()
+        private void Death()
         {
             Quaternion rot = new Quaternion(transform.rotation.x, transform.rotation.y, 90f, transform.rotation.w);
 
@@ -127,6 +131,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         }
 
+        /// <summary>
+        /// @author Qabais Mohammed
+        /// triggers explosion effect when zombies collide with player.
+        /// removed zombie object and local visual effects
+        /// </summary>
+        private void Explode()
+        {
+            Quaternion rot = new Quaternion(transform.rotation.x, transform.rotation.y, 90f, transform.rotation.w);
+
+            //call explosion effect
+            var zExplosion = Instantiate(bombSpray, transform.position, bombSpray.transform.rotation);
+            Destroy(zExplosion, 2f);
+            //call toxic effect 
+            var zRadiation = Instantiate(radiation, transform.position, radiation.transform.rotation);
+            Destroy(zRadiation, 5f);
+            //kill zombie after contact
+            Destroy(this.gameObject, 0f);
+
+            // spawn.enemiesKilled++;
+            spawner.SendMessage("IncrementEnemies");
+
+        }
     }
 
 
