@@ -12,11 +12,11 @@ namespace com.Riyad.TankMania
     /// </summary>
     public class Launcher : MonoBehaviourPunCallbacks
     {
-        public void Awake()
+           public void Awake()
         {
             PhotonNetwork.AutomaticallySyncScene = true;
             Connect();
-        }
+        } 
 
         public override void OnConnectedToMaster()
         { 
