@@ -64,6 +64,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AAA-UI-AAA\LogoAnimation\Logo.cs" />
+    <Compile Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\GUI Elements\UI_BrightnessShader\Brightness.cs" />
+    <Compile Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\MenuScripts\Init_LoadPreferences.cs" />
+    <Compile Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\MenuScripts\MenuController.cs" />
+    <Compile Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\Scenes\INTRO\Wait.cs" />
+    <Compile Include="Assets\AAA-UI-AAA\PauseMenuUI\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Free Assests\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Free Assests\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\Free Assests\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -127,42 +133,64 @@
     <Compile Include="Assets\Scripts\Scripts_Nuareo Tek\Spawner.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
     <None Include="Assets\Free Assests\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Free Assests\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\Projectors\Guidelines.txt" />
     <None Include="Assets\Free Assests\PolygonPrototype\Shaders\Prototype_Object.shader" />
     <None Include="Assets\Free Assests\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\ShootingSound\ReadMe.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Free Assests\PolygonPrototype\Shaders\Prototype_Global.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Free Assests\particlepack\License.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\ParrelSync\VERSION.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\Free Assests\Kenney\Particle samples\License.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\GUI Elements\UI_BrightnessShader\BrightnessEffect.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Free Assests\Poly City - Free Cartoon Pack\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Free Assests\Polygonal Particles\Assets\Shaders\GradientBackgroundShader.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Free Assests\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Free Assests\PolygonPrototype\Shaders\Prototype_Glass_Object.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Free Assests\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\AAA-UI-AAA\MainMenuUI\Tankmania Main Menu\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
