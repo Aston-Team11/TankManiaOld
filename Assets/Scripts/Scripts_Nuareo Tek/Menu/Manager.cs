@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class Manager : MonoBehaviourPunCallbacks
 {
@@ -14,6 +16,9 @@ public class Manager : MonoBehaviourPunCallbacks
     public GameObject time;
     public int playerCount = 0;
     [SerializeField] private int RespawnTime;
+    public int count;
+    [SerializeField] private List<GameObject> PlayerLists = new List<GameObject>();
+
 
 
     /// <summary>
@@ -68,7 +73,7 @@ public class Manager : MonoBehaviourPunCallbacks
         //player.SendMessage("SetOrder",1);
         // player.SendMessage("setPlayerID", playerCount);
         player.SendMessage("setTimeObject", time);
-      
+        PlayerLists.Add(player);
 
         return player.transform;
     }
@@ -76,6 +81,7 @@ public class Manager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void IncrementPlayerCount(){
         playerCount++;
+
     }
 
 
@@ -105,8 +111,9 @@ public class Manager : MonoBehaviourPunCallbacks
     private void Respawn(GameObject deadPlayer)
     {
         //deadPlayer.SetActive(false);
-        StartCoroutine(RespawnPlayer(deadPlayer));
+        //StartCoroutine(RespawnPlayer(deadPlayer));
         RespawnTime += 10;
+        PlayerLists.Remove(deadPlayer);
 
     }
 
@@ -123,7 +130,47 @@ public class Manager : MonoBehaviourPunCallbacks
         RespawningPlayer.GetComponent<PlayerManager>().StatReset();
         RespawningPlayer.SetActive(true);
         RespawningPlayer.transform.position = SpawnPoint.position;
+        PlayerLists.Add(RespawningPlayer);
     }
+
+    public void Update()
+    {
+        if (photonView.IsMine)
+        {
+            //CheckForEndGame();
+            if(PlayerLists.Count <= 0)
+            {
+                photonView.RPC("EndGame", RpcTarget.All);
+                //EndGame();
+            }
+        }
+        
+    }
+
+
+    public void CheckForEndGame()
+    {
+        foreach(GameObject player in PlayerLists)
+        {
+            if(player.activeSelf == false)
+            {
+                count++;
+            }
+
+        }
+
+        if (count.Equals(playerCount)) {
+            //EndGame();
+            photonView.RPC("EndGame", RpcTarget.All);
+        }
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndCredits", LoadSceneMode.Single);
+
+    }
+
 }
 
 // if (!(photonView.IsMine))

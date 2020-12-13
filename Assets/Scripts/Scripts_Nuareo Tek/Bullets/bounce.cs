@@ -89,6 +89,12 @@ public class bounce : MonoBehaviourPunCallbacks
 
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerAddOns")
         {
+            if (firstFire == true)
+            {
+                firstFire = false;
+                return;
+            }
+
           //++++Damages the player by 10 hitpoints nad triggers explosion effect
             Debug.Log("player: " + playerOwner.ToString() + "shot himself");
             collision.gameObject.GetComponentInParent<PlayerManager>().DamagePlayer(10);
