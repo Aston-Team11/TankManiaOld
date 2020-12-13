@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/AAA-UI-AAA/MainMenuUI/Tankmania Main Menu/Scenes/MainMenu/MainMenu.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
