@@ -13,7 +13,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     private string roomName = "";
     static private string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public string nick = "Set a nick";
+    public string nick = "Set a nick";  // Public variable to set the nick before a client joins
 
     public void Awake()
     {

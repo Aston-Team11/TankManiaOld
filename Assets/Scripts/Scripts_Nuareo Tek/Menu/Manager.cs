@@ -44,30 +44,30 @@ public class Manager : MonoBehaviourPunCallbacks
         photonView.RPC("IncrementPlayerCount", RpcTarget.AllBuffered);
 
        
-        if (!(photonView.IsMine))
-        {
-            // set player counts
-            if (GameObject.Find("2") == null)
-            {
-                playerName = "2";
+        //if (!(photonView.IsMine))
+        //{
+        //    // set player counts
+        //    if (GameObject.Find("2") == null)
+        //    {
+        //        playerName = "2";
              
-            }
+        //    }
 
-            else if (GameObject.Find("3") == null)
-            {
-                playerName = "3";
-            }
+        //    else if (GameObject.Find("3") == null)
+        //    {
+        //        playerName = "3";
+        //    }
 
-            else if (GameObject.Find("4") == null)
-            {
-                playerName = "4";
-            }
+        //    else if (GameObject.Find("4") == null)
+        //    {
+        //        playerName = "4";
+        //    }
 
-        }
-        else
-        {
-            playerName = "1";
-        }
+        //}
+        //else
+        //{
+        //    playerName = "1";
+        //}
         //return player.transform;
         StartCoroutine(Timer());
         return transform;
@@ -86,11 +86,11 @@ public class Manager : MonoBehaviourPunCallbacks
         // player.SendMessage("setPlayerID", playerCount);
         player.SendMessage("setTimeObject", time);
         PlayerLists.Add(player);
-        Dictionary<int, Photon.Realtime.Player> pList = Photon.Pun.PhotonNetwork.CurrentRoom.Players;
-        foreach (KeyValuePair<int, Photon.Realtime.Player> p in pList)
-        {
-            print(p.Value.NickName);
-        }
+        //Dictionary<int, Photon.Realtime.Player> pList = Photon.Pun.PhotonNetwork.CurrentRoom.Players;
+        //foreach (KeyValuePair<int, Photon.Realtime.Player> p in pList)
+        //{
+        //    print(p.Value.NickName);
+        //}
 
         //Debug.LogWarning(PhotonNetwork.PlayerList);
 
