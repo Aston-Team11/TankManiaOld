@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviourPunCallbacks
 {
-    public string player_prefab;
+    // public string player_prefab;
     public GameObject playerObject;
     public string mouseReticle;
     public string Enemy;
@@ -19,7 +19,7 @@ public class Manager : MonoBehaviourPunCallbacks
     public int count;
     [SerializeField] private List<GameObject> PlayerLists = new List<GameObject>();
 
-
+    private string playerName;
 
     /// <summary>
     /// @author Riyad K Rahman
@@ -43,39 +43,58 @@ public class Manager : MonoBehaviourPunCallbacks
     {
         photonView.RPC("IncrementPlayerCount", RpcTarget.AllBuffered);
 
-
-        var player = PhotonNetwork.Instantiate(playerObject.name, SpawnPoint.position, SpawnPoint.rotation);
-
+       
         if (!(photonView.IsMine))
         {
             // set player counts
             if (GameObject.Find("2") == null)
             {
-                player.name = "2";
+                playerName = "2";
+             
             }
 
             else if (GameObject.Find("3") == null)
             {
-                player.name = "3";
+                playerName = "3";
             }
 
             else if (GameObject.Find("4") == null)
             {
-                player.name = "4";
+                playerName = "4";
             }
 
         }
         else
         {
-            player.name = "1";
+            playerName = "1";
         }
+        //return player.transform;
+        StartCoroutine(Timer());
+        return transform;
+    }
+
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        var player = PhotonNetwork.Instantiate(playerObject.name, SpawnPoint.position, SpawnPoint.rotation);
+        GameObject getNick = GameObject.Find("Launcher");
+        player.name = getNick.GetComponent<Launcher>().getNick();
 
         //player.SendMessage("SetOrder",1);
         // player.SendMessage("setPlayerID", playerCount);
         player.SendMessage("setTimeObject", time);
         PlayerLists.Add(player);
+        Dictionary<int, Photon.Realtime.Player> pList = Photon.Pun.PhotonNetwork.CurrentRoom.Players;
+        foreach (KeyValuePair<int, Photon.Realtime.Player> p in pList)
+        {
+            print(p.Value.NickName);
+        }
 
-        return player.transform;
+        //Debug.LogWarning(PhotonNetwork.PlayerList);
+
+
     }
 
     [PunRPC]
@@ -96,20 +115,20 @@ public class Manager : MonoBehaviourPunCallbacks
         if (!(photonView.IsMine)) return;
 
         StartCoroutine(DelaySpawn(targetPosition));
-    // for (int i = 0; i < 5; i++)
-    // {
-    //     var zombie = PhotonNetwork.Instantiate(Enemy, SpawnPointEnemy.position, SpawnPointEnemy.rotation);
-    //     zombie.SetActive(true);
-    //     zombie.name = "zombie" + i;
-    //     zombie.SendMessage("TargetPlayer1");
-    //
-    // }
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     var zombie = PhotonNetwork.Instantiate(Enemy, SpawnPointEnemy.position, SpawnPointEnemy.rotation);
+        //     zombie.SetActive(true);
+        //     zombie.name = "zombie" + i;
+        //     zombie.SendMessage("TargetPlayer1");
+        //
+        // }
     }
 
     IEnumerator DelaySpawn(Transform targetPosition)
     {
         yield return new WaitForSeconds(1f);
-        
+
         for (int i = 0; i < 5; i++)
         {
             var zombie = PhotonNetwork.Instantiate(Enemy, SpawnPointEnemy.position, SpawnPointEnemy.rotation);
@@ -120,11 +139,11 @@ public class Manager : MonoBehaviourPunCallbacks
         }
     }
 
-        /// <summary>
-        /// Needs fixing
-        /// </summary>
-        /// <param name="deadPlayer"></param>
-        private void Respawn(GameObject deadPlayer)
+    /// <summary>
+    /// Needs fixing
+    /// </summary>
+    /// <param name="deadPlayer"></param>
+    private void Respawn(GameObject deadPlayer)
     {
         //deadPlayer.SetActive(false);
         //StartCoroutine(RespawnPlayer(deadPlayer));
@@ -164,23 +183,23 @@ public class Manager : MonoBehaviourPunCallbacks
     }
 
 
-  public void CheckForEndGame()
-  {
-      foreach (GameObject player in PlayerLists)
-      {
-          if (player.activeSelf == false)
-          {
-              count++;
-          }
+    public void CheckForEndGame()
+    {
+        foreach (GameObject player in PlayerLists)
+        {
+            if (player.activeSelf == false)
+            {
+                count++;
+            }
 
-      }
+        }
 
-      if (count.Equals(playerCount))
-      {
-          //EndGame();
-          photonView.RPC("EndGame", RpcTarget.All);
-      }
-  }
+        if (count.Equals(playerCount))
+        {
+            //EndGame();
+            photonView.RPC("EndGame", RpcTarget.All);
+        }
+    }
 
     [PunRPC]
     public void EndGame()

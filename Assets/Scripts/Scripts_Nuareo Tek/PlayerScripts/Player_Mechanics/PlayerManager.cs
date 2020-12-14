@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     public void Start()
     {
         SetName();
-        SetOrder(Convert.ToInt32(this.gameObject.name));
+      //  SetOrder(Convert.ToInt32(this.gameObject.name));
         setMouse();
         MySystem = GameObject.Find("----SYSTEMS----");
         MySpawners = GameObject.Find("Spawners");
