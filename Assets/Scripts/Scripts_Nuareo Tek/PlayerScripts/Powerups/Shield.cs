@@ -15,7 +15,7 @@ public class Shield : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        
+        //Physics.IgnoreCollision(this.GetComponent<Collider>(),player.GetComponent<Collider>())
     }
 
 
@@ -31,7 +31,7 @@ public class Shield : MonoBehaviourPunCallbacks
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerAddOns")
         {
             Physics.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider>());
 
@@ -52,7 +52,7 @@ public class Shield : MonoBehaviourPunCallbacks
 
         IEnumerator Dissolve()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         FXAnimation();
     }
 
@@ -62,7 +62,7 @@ public class Shield : MonoBehaviourPunCallbacks
         //changes fernal and offset, to look like shield is charging up and becoming more solid 
         if (bright > -2.00f && change == false)
         {
-            bright -= 0.2f * Time.fixedDeltaTime;
+            bright -= 0.8f * Time.fixedDeltaTime;
             mats[0].SetFloat("Vector1_EBFAC9DB", bright);
             mats[0].SetFloat("Vector1_CD965979", bright + 2.05f);
             //!!!! change 2.05 value if you want alter brightness to change before material changes 
@@ -111,7 +111,7 @@ public class Shield : MonoBehaviourPunCallbacks
         var fernal = mats[1].GetFloat("Vector1_7AFF87E4");
         if (fernal < 2.37f && disabled == false)
         {
-            fernal += 0.2f * Time.fixedDeltaTime;
+            fernal += 0.4f * Time.fixedDeltaTime;
             mats[1].SetFloat("Vector1_7AFF87E4", fernal);
         }
 
@@ -124,7 +124,7 @@ public class Shield : MonoBehaviourPunCallbacks
         var dissolve = mats[1].GetFloat("Vector1_2E8A09FF");
         if (dissolve > -0.9f && disabled2 == false)
         {
-            dissolve -= 0.2f * Time.fixedDeltaTime;
+            dissolve -= 0.6f * Time.fixedDeltaTime;
             mats[1].SetFloat("Vector1_2E8A09FF", dissolve);
         }
 

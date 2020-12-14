@@ -11,12 +11,8 @@ using Photon.Pun;
     public class PowerUp : MonoBehaviourPunCallbacks
     {
         public GameObject explosion;            // the paricle effect for explosion
-    public GameObject explosion_soundEffect;  // the explosion sound effect for the power up boxes
 
-    public void Start(){
-   // explosionSound = GetComponent<AudioSource>();
-   explosion_soundEffect = GameObject.FindGameObjectWithTag("PowerUpExplosion"); //the tag is connected to the Explosives object sound in the map object.
-    }
+
         /// <summary>
         /// @author Riyad K Rahman
         /// when this gameObject collides with a bullet the <see cref="Explode"/> function is called to break the box
@@ -28,8 +24,7 @@ using Photon.Pun;
             {
                 Debug.Log("givePowerUp");
                 Explode();
-            
-        }
+            }
 
         }
 
@@ -41,11 +36,8 @@ using Photon.Pun;
         {
             var Exploded = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(Exploded, 2f);
-       // explosionSound.Play();
-        explosion_soundEffect.GetComponent<AudioSource>().Play();        //play the explosion sound effect.
-        photonView.RPC("sendDestroy", RpcTarget.AllBufferedViaServer);
-        //playSound();
-    }
+            photonView.RPC("sendDestroy", RpcTarget.AllBufferedViaServer);
+        }
 
         /// <summary>
         /// @author Riyad K Rahman
@@ -54,7 +46,7 @@ using Photon.Pun;
         [PunRPC]
         public void sendDestroy()
         {
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
 
         /// <summary>
@@ -85,10 +77,5 @@ using Photon.Pun;
 
 
         }
-    IEnumerator playSound()
-    {
-        yield return new WaitForSeconds(8f);
-        photonView.RPC("sendDestroy", RpcTarget.AllBufferedViaServer);
-    }
 
-}
+    }

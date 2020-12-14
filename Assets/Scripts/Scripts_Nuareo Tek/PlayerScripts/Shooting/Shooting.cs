@@ -11,17 +11,10 @@ public class Shooting : MonoBehaviourPunCallbacks
     public int bulletSpeed;
     // the player who shot the bullet is the parent
     public GameObject parent;
-    public ParticleSystem muzzleFlash;
 
     public bool shootAble = true;
     public float waitBeforeNextShot = 0.25f;
     public GameObject Shield;
-    public AudioSource tank_shootingSound;
-
-    public void Start() {
-        //AudioSource for the tank shooting 
-        tank_shootingSound = GetComponent<AudioSource>();
-    }
 
     private void Update()
     {
@@ -32,13 +25,10 @@ public class Shooting : MonoBehaviourPunCallbacks
             if (shootAble)
             {
                 shootAble = false;
-                //AudioSource for the tank shooting 
-                tank_shootingSound.Play();
                 // send shoot function for every player
                 photonView.RPC("Shoot", RpcTarget.All);
                 //Shoot();
                 StartCoroutine(ShootingYield());
-                muzzleFlash.Play();
             }
         }
 
@@ -54,7 +44,6 @@ public class Shooting : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Shoot()
     {
-        
             Quaternion rot = top.transform.rotation;
             float angle = 90 * Mathf.Deg2Rad;
 
