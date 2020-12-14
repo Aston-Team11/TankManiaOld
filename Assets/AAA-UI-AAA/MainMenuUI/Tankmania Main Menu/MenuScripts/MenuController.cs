@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using TMPro;
 namespace SpeedTutorMainMenuSystem
 {
     public class MenuController : MonoBehaviour
@@ -62,13 +62,29 @@ namespace SpeedTutorMainMenuSystem
         }
         #endregion
 
+    
+        public GameObject Launcher;
+        public TMP_InputField roomName;
+        public void Awake()
+        {
+            Launcher = GameObject.Find("Launcher"); // Finds launcher if it exists
+        }
+
+
         //MAIN SECTION
 
-public void PlayGame () 
-{
-SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-}
+        public void PlayGame()
+        {
+             Launcher.GetComponent<Launcher>().OnClickCreate(); // Call on new game click in launcher
 
+        }
+        public void LoadGame()
+        {
+            roomName = GameObject.Find("InputField").GetComponent<TMP_InputField>();
+            Launcher.GetComponent<Launcher>().OnClickJoin(roomName.text.ToUpper()); // Call on join button press in launcher
+        }
+ 
+        // Main Section
         public IEnumerator ConfirmationBox()
         {
             confirmationMenu.SetActive(true);
