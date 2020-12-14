@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tank Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/EndCredits.unity
+    path: Assets/Scenes/EndGame.unity
     guid: ab1005cce796fbd43842e803bff6f760
   m_configObjects: {}

@@ -204,7 +204,7 @@ public class Manager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void EndGame()
     {
-        SceneManager.LoadScene("EndCredits", LoadSceneMode.Single);
+        SceneManager.LoadScene("EndGame", LoadSceneMode.Single);
 
     }
 
