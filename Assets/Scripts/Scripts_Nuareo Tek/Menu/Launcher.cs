@@ -13,11 +13,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     private string roomName = "";
     static private string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public string nick = "Set a nick";  // Public variable to set the nick before a client joins
 
     public void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true; // Sets options to always sync the scene to who is the Master client (Host)
         PhotonNetwork.GameVersion = "1.5.4";
+        
     }
 
     public void Start()
@@ -82,6 +84,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public string getRoomName() { return roomName; }
     public void setRoomName(string name) { roomName = name; }
+    public string getNick() { return nick; }
 
 
 }

@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/AAA-UI-AAA/LogoAnimation/LogoAnimation.unity
     guid: f7a8f7026c40847fba375b9294eafa71
   - enabled: 1
+    path: Assets/Scenes/Dialogue Scene.unity
+    guid: 2fbc73ed609d3c74182154b23fe38b7e
+  - enabled: 1
     path: Assets/AAA-UI-AAA/MainMenuUI/Tankmania Main Menu/Scenes/MainMenu/MainMenu.unity
     guid: e84c9862265a1104a9d724503d4111aa
   - enabled: 1
     path: Assets/Scenes/Tank Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/EndCredits.unity
+    guid: ab1005cce796fbd43842e803bff6f760
   m_configObjects: {}
